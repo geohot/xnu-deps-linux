@@ -9,6 +9,11 @@
 #define __USE_GNU
 #include <dlfcn.h>
 #endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 struct dyld_unwind_sections
 {
     const struct mach_header*       mh;
@@ -29,5 +34,9 @@ mach_port_t mach_host_self(void);
 kern_return_t host_statistics ( host_t host_priv, host_flavor_t flavor, host_info_t host_info_out, mach_msg_type_number_t *host_info_outCnt);
 
 uint64_t mach_absolute_time(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
