@@ -32,3 +32,6 @@ clean:
 	make -C cctools-836/ distclean
 	@echo Cleaning kext-tools...
 	make -C kext-tools/ distclean
+	@echo Installing prebuilt libclang_rt.cc_kext.a...
+	install -d $(DESTDIR)/lib
+	install -m 644 prebuilt/libclang_rt.cc_kext.a $(DESTDIR)/lib/libclang_rt.cc_kext.a
